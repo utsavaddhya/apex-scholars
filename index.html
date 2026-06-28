@@ -27,7 +27,7 @@
     }
 
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
     body {
       background:var(--white); color:var(--text);
       font-family:'Plus Jakarta Sans',sans-serif; font-weight:400;
@@ -458,6 +458,31 @@
       .ft-grid { grid-template-columns:1fr; }
       .rb { padding:30px 24px; }
       .toppers-row { flex-direction:column; }
+
+      /* Fix 4: hide custom cursor on mobile */
+      .cursor, .cursor-ring { display:none !important; }
+      body { cursor:auto; }
+
+      /* Fix 5: clamp font sizes for mobile */
+      .hero-h1 { font-size:clamp(2.4rem,10vw,4rem); }
+      .h2t { font-size:clamp(1.6rem,6vw,2.4rem); }
+      .ach-n { font-size:clamp(1.8rem,7vw,2.8rem); }
+      .rb-n  { font-size:clamp(2rem,8vw,3.5rem); }
+
+      /* Fix 2: stack about section properly */
+      #about { grid-template-columns:1fr; }
+      .abt-img img { height:260px; }
+      .abt-grid { grid-template-columns:1fr; }
+
+      /* Fix 3: admission grid single column */
+      .adm-grid { grid-template-columns:1fr; gap:40px; }
+      .adm-form { padding:24px; }
+
+      /* Fix: footer bottom stack */
+      .ft-btm { flex-direction:column; gap:8px; text-align:center; }
+
+      /* Fix: batch table scroll */
+      .batch-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
     }
   </style>
 </head>
